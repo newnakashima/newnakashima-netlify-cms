@@ -8,9 +8,9 @@ export default class BlogIndexPage extends React.Component {
     return (
       <Layout>
         <div
-          className="full-width-image-container margin-top-0"
+          className="full-width-image-container margin-top-0 has-background-black"
           style={{
-            backgroundImage: `url('/img/blog-index.jpg')`,
+            // backgroundImage: `url('/img/blog-index.jpg')`,
           }}
         >
           <h1
@@ -22,7 +22,7 @@ export default class BlogIndexPage extends React.Component {
               padding: '1rem',
             }}
           >
-            Latest Stories
+            newnakashimaのblog
           </h1>
         </div>
         <section className="section">
