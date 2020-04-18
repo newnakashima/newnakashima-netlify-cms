@@ -70,10 +70,12 @@ const BlogPost = ({ data }) => {
               name="description"
               content={`${post.frontmatter.description}`}
             />
-            <meta
-              property="og:image"
-              content={`${post.frontmatter.featuredimage.childImageSharp.fluid.src}`}
-            />
+            {post.frontmatter.featuredimage ? (
+              <meta
+                property="og:image"
+                content={`${post.frontmatter.featuredimage.childImageSharp.fluid.src}`}
+              />
+            ) : null}
             <meta property="og:description" content={`${post.frontmatter.title}`} />
           </Helmet>
         }
