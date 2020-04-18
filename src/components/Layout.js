@@ -49,6 +49,10 @@ const TemplateWrapper = ({ children }) => {
           property="og:image"
           content={`${withPrefix('/')}img/og-image.jpg`}
         />
+        <meta
+          name="twitter:image"
+          content={`${withPrefix('/')}img/og-image.jpg`}
+        />
         <meta property="og:description" content={title} />
       </Helmet>
       <Navbar />
