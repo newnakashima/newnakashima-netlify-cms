@@ -73,7 +73,7 @@ const BlogPost = ({ data }) => {
             {post.frontmatter.featuredimage ? (
               <meta
                 property="og:image"
-                content={`${post.frontmatter.featuredimage.childImageSharp.fluid.src}`}
+                content={`https://blog-newnakashima.netlify.app${post.frontmatter.featuredimage.childImageSharp.fluid.src}`}
               />
             ) : null}
             <meta property="og:description" content={`${post.frontmatter.title}`} />
