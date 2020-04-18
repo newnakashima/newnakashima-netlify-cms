@@ -38,7 +38,7 @@ const TemplateWrapper = ({ children }) => {
           href={`${withPrefix('/')}img/safari-pinned-tab.svg`}
           color="#ff4400"
         />
-        <meta name="theme-color" content="#fff" />
+        <meta name="theme-color" content="#88f" />
         <meta name="twitter:card" content="summary" />
         <meta name="twitter:site" content="@InNksm" />
         <meta name="twitter:creator" content="@InNksm" />
