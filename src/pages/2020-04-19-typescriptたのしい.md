@@ -7,6 +7,8 @@ tags:
   - TypeScript
   - Vue
 ---
+![](/img/remoteworks458a3421_tp_v.jpg)
+
 本当に遅ればせながらだが、やっとTypeScriptを使うようになってきた。というか今日から使い始めた。
 
 最初はVSCode上で色々怒られてめんどくさいなあ、、、とか思っていたけど、guard節を強制させてくる感じとか、asキーワードでキャストする感じとか、モダンな言語という感じがして書いていて気持ちが良い。昔SwiftとかKotlinを触ってた時の感覚を思い出す。
@@ -28,9 +30,10 @@ $ npm install --save core-js@3
 ```
 $ npm install --save core-js/modules/es.array.for-each core-js/modules/web.dom-collections.for-each
 ```
+
 をやれ、みたいなのも出てくるんだけど、そもそもこのコマンド自体がうまくいかなかった。単純にcore-jsを入れ直せば解決した。
 
-（ちなみに最近core-jsは作者が交通事故で収監されることになりメンテされなくなるのでは？　ということでちょっと話題になってた。[https://qiita.com/yumetodo/items/eaf3b97aeae3d8c4a07e](https://qiita.com/yumetodo/items/eaf3b97aeae3d8c4a07e)）
+（ちなみに最近core-jsは作者が交通事故で収監されることになりメンテされなくなるのでは？　ということでちょっと話題になってた。<https://qiita.com/yumetodo/items/eaf3b97aeae3d8c4a07e>）
 
 ### object is possibly null とかいうメッセージがでてコンパイルできない
 
@@ -63,7 +66,7 @@ methods: {
 const text = (<HTMLElement>e).innerText;
 ```
 
-\<HTMLElement\>の閉じタグがねーぞ、みたいなことを言われてしまう。
+<HTMLElement>の閉じタグがねーぞ、みたいなことを言われてしまう。
 
 これは流石にVueで書いてるんだからESLintの設定とかで無効化できそうだけど、そもそもこのキャストの書き方は読みづらいからasを使ったほうが良さげ。
 
@@ -71,7 +74,7 @@ const text = (<HTMLElement>e).innerText;
 const text = (e as HTMLElement).innerText;
 ```
 
----
+- - -
 
 万事こんな感じなので、タイプする量はJSに比べて増える。けれども書き心地は圧倒的にこっちのほうがいい。絶対バグも少ないし。
 
@@ -83,4 +86,4 @@ const text = (e as HTMLElement).innerText;
 
 何周周回遅れかはわからないが、これからTypeScriptも頑張っていきたい。
 
-（※画像は __[ぱくたそ https://www.pakutaso.com/](https://www.pakutaso.com/)__ 様のフリー素材です）
+（※画像は **[ぱくたそ https://www.pakutaso.com/](https://www.pakutaso.com/)** 様のフリー素材です）
