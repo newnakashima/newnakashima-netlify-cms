@@ -1,10 +1,12 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import PropTypes from 'prop-types'
 import { kebabCase } from 'lodash'
 import Helmet from 'react-helmet'
 import { graphql, Link, withPrefix } from 'gatsby'
 import Layout from '../components/Layout'
 import Content, { HTMLContent } from '../components/Content'
+import hljs from 'highlight.js'
+import 'highlight.js/styles/vs2015.css'
 
 export const BlogPostTemplate = ({
   content,
@@ -15,6 +17,11 @@ export const BlogPostTemplate = ({
   helmet,
 }) => {
   const PostContent = contentComponent || Content
+  useEffect(() => {
+    document.querySelectorAll("pre code").forEach(block => {
+      hljs.highlightBlock(block);
+    })
+  })
 
   return (
     <section className="section">

@@ -9,7 +9,7 @@ tags:
 ---
 tsconfig.jsonに下記の項目を設定した。
 
-```
+```json
 {
   (省略)
   "exclude": [
