@@ -9,7 +9,7 @@ tags:
   - React
   - NetlifyCMS
 ---
-このブログは [gatsby-starter-netlify-cms](https://github.com/netlify-templates/gatsby-starter-netlify-cms) を使っているのだが、このテンプレートはReact製で、関数コンポーネントで作ってある。
+このブログは [gatsby-starter-netlify-cms](https://github.com/netlify-templates/gatsby-starter-netlify-cms) を使っているのだが、このテンプレートはReact製で、関数コンポーネントで作ってある。
 
 コードブロックをハイライトしたくてhighlight.jsを導入したかったけど、クラスコンポーネントで導入している例はみつけたが関数コンポーネントで導入する方法を調べるのに少し時間がかかった。
 
