@@ -3,9 +3,11 @@ module.exports = {
     title: 'newnakashimaのblog',
     description:
       'newnakashimaのblogです',
+    siteUrl: 'https://blog.nksm.in.net',
   },
   plugins: [
     'gatsby-plugin-react-helmet',
+    'gatsby-plugin-feed',
     'gatsby-plugin-sass',
     {
       // keep as first gatsby-source-filesystem plugin for gatsby image support

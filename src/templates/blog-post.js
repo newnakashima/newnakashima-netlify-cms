@@ -7,6 +7,7 @@ import Layout from '../components/Layout'
 import Content, { HTMLContent } from '../components/Content'
 import hljs from 'highlight.js'
 import 'highlight.js/styles/vs2015.css'
+import './blog.sass'
 
 export const BlogPostTemplate = ({
   content,
