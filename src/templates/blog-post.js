@@ -2,7 +2,7 @@ import React, { useEffect } from 'react'
 import PropTypes from 'prop-types'
 import { kebabCase } from 'lodash'
 import Helmet from 'react-helmet'
-import { graphql, Link, withPrefix } from 'gatsby'
+import { graphql, Link } from 'gatsby'
 import Layout from '../components/Layout'
 import Content, { HTMLContent } from '../components/Content'
 import hljs from 'highlight.js'
@@ -20,8 +20,17 @@ export const BlogPostTemplate = ({
   useEffect(() => {
     document.querySelectorAll("pre code").forEach(block => {
       hljs.highlightBlock(block);
+      block.innerHTML = createLineNumbers(block);
     })
   })
+
+  const createLineNumbers = block => {
+    const lines = block.innerHTML.split("\n");
+    const digits = Math.floor(Math.log10(lines.length)) + 1;
+    return lines.map((line, i) => {
+      return `<span class="line-number">${line}</span>`;
+    }).slice(0, -1).join("\n");
+  }
 
   return (
     <section className="section">
