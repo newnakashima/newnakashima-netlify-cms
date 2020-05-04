@@ -1,7 +1,7 @@
 ---
 templateKey: blog-post
 title: 関数コンポーネントでhighlightjsを使う
-date: 2020-05-04T09:11:00
+date: 2020-05-04T04:11:00.000Z
 description: ""
 tags:
   - JavaScript
