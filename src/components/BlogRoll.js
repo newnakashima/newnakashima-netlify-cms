@@ -76,7 +76,7 @@ export default () => (
         ) {
           edges {
             node {
-              excerpt(pruneLength: 400, truncate: true)
+              excerpt(pruneLength: 120, truncate: true)
               id
               fields {
                 slug
