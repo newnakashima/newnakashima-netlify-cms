@@ -26,3 +26,19 @@ collections:
       - {label: "Featured Image", name: "featuredimage", widget: image, required: false}
       - {label: "Body", name: "body", widget: "markdown"}
       - {label: "Tags", name: "tags", widget: "list", required: false}
+  - name: "book"
+    label: "book"
+    folder: "src/book-queue/"
+    create: true
+    slug: "{{year}}-{{month}}"
+    fields:
+      - label: "Books"
+        name: "books"
+        widget: "list"
+        summary: "{{fields.title}} - {{fields.author}}"
+        fields: 
+          - {label: "タイトル", name: "title", widget: "string", default: "書籍名"}
+          - {label: "著者", name: "author", widget: "string", default: "著者名"}
+          - {label: "追加日時", name: "created_at", widget: "datetime"}
+          - {label: "読了日時", name: "read_at", widget: "datetime", default: ""}
+
