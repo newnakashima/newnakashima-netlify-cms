@@ -30,7 +30,7 @@ collections:
     label: "book"
     folder: "src/book-queue/"
     create: true
-    slug: "{{year}}-{{month}}"
+    slug: "{{year}}-{{month}}-{{slug}}"
     fields:
       - label: "Books"
         name: "books"
