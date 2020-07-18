@@ -8,7 +8,7 @@ LaravelとVueで開発始めるのは簡単なのだが、TypeScriptをやろう
 
 まず、 app.js を app.ts に変える。
 
-```
+```sh
 mv resources/js/app.js resources/js/app.ts
 ```
 
