@@ -2,6 +2,7 @@ import React from 'react'
 import { Link } from 'gatsby'
 import github from '../img/github-icon.svg'
 import logo from '../img/logo.svg'
+import rss from '../img/rss-icon.svg'
 
 const Navbar = class extends React.Component {
   constructor(props) {
@@ -68,6 +69,16 @@ const Navbar = class extends React.Component {
               >
                 <span className="icon">
                   <img src={github} alt="Github" />
+                </span>
+              </a>
+              <a
+                className="navbar-item"
+                href="/rss.xml"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <span className="icon">
+                  <img src={rss} alt="RSS" />
                 </span>
               </a>
             </div>
