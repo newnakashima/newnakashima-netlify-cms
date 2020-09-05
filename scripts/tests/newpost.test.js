@@ -10,11 +10,16 @@ test('createFileName', () => {
 });
 
 test('createHeader', () => {
-    expect(newpost.createHeader('これはテストタイトルです', '2020/2/3')).toBe(`
----
+    expect(newpost.createHeader('これはテストタイトルです', '2020/2/3')).toBe(`---
 templateKey: blog-post
 title: これはテストタイトルです
 date: 2020-02-03
 ---
-`);
+`
+    );
+});
+
+test('formattedTime', () => {
+    expect(newpost.formattedTime('2020-10-10 01:00:00')).toBe('01:00:00');
+    expect(newpost.formattedTime('2020-09-01 01:00')).toBe('01:00:00');
 });
