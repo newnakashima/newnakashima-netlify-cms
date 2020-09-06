@@ -3,35 +3,62 @@ import React from 'react'
 import Layout from '../components/Layout'
 import BlogRoll from '../components/BlogRoll'
 
-export default class BlogIndexPage extends React.Component {
-  render() {
-    const data = this.props.data
-    const count = data.allMarkdownRemark.edges.length
+const BlogIndexPage = (props) => {
+  const data = props.data
+  const count = data.allMarkdownRemark.edges.length
+  const NextPage = (props) => {
     return (
-      <Layout>
-        <div
-          className="full-width-image-container margin-top-0 has-background-black"
-          style={{
-            // backgroundImage: `url('/img/blog-index.jpg')`,
-          }}
-        >
-          <h1
-            className="has-text-weight-bold is-size-1 header-title"
-          >
-            newnakashimaのblog
-          </h1>
-        </div>
-        <section className="section">
-          <div className="container">
-            <div className="content">
-              <BlogRoll data={data} count={count}/>
-            </div>
-          </div>
-        </section>
-      </Layout>
+      <a className="pageNav next" href={`/page/${(props.context.currentPage+1)}`}>次のページ</a>
     )
   }
+  const PreviousPage = (props) => {
+    const href = props.context.currentPage == 2 ? '/' : `/page/${(props.context.currentPage - 1)}`
+    return (
+      <a className="pageNav" href={href}>前のページ</a>
+    )
+  }
+  return (
+    <Layout>
+      <div
+        className="full-width-image-container margin-top-0 has-background-black"
+        style={{
+          // backgroundImage: `url('/img/blog-index.jpg')`,
+        }}
+      >
+        <h1
+          className="has-text-weight-bold is-size-1 header-title"
+        >
+          newnakashimaのblog
+        </h1>
+      </div>
+      <section className="section">
+        <div className="container">
+          <div className="content">
+            <div className="pagerNavButtons">
+              { props.pageContext.currentPage > 1 &&
+                <PreviousPage context={props.pageContext} />
+              }
+              { props.pageContext.numPages > props.pageContext.currentPage &&
+                <NextPage context={props.pageContext} />
+              }
+            </div>
+            <BlogRoll data={data} count={count}/>
+            <div className="pagerNavButtons">
+              { props.pageContext.currentPage > 1 &&
+                <PreviousPage context={props.pageContext} />
+              }
+              { props.pageContext.numPages > props.pageContext.currentPage &&
+                <NextPage context={props.pageContext} />
+              }
+            </div>
+          </div>
+        </div>
+      </section>
+    </Layout>
+  )
 }
+
+export default BlogIndexPage
 
 export const query = graphql`
   query BlogRollQuery($skip: Int!, $limit: Int!) {

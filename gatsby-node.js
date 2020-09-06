@@ -71,7 +71,7 @@ exports.createPages = ({ actions, graphql }) => {
     })
 
     // list page
-    const postsPerPage = 20
+    const postsPerPage = 10
     const numPages = Math.ceil(posts.length / postsPerPage)
     Array.from({ length: numPages }).forEach((_, i) => {
       createPage({
@@ -84,6 +84,17 @@ exports.createPages = ({ actions, graphql }) => {
           currentPage: i + 1,
         },
       })
+    })
+
+    createPage({
+      path: `/`,
+      component: path.resolve("./src/templates/index.js"),
+      context: {
+        limit: postsPerPage,
+        skip: 0,
+        numPages,
+        currentPage: 1
+      }
     })
   })
 }
