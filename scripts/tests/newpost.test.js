@@ -13,7 +13,14 @@ test('createHeader', () => {
     expect(newpost.createHeader('これはテストタイトルです', '2020/2/3')).toBe(`---
 templateKey: blog-post
 title: これはテストタイトルです
-date: 2020-02-03
+date: 2020-02-03 00:00:00
+---
+`
+    );
+    expect(newpost.createHeader('これはテストタイトルです', '2020/2/3 09:01:05')).toBe(`---
+templateKey: blog-post
+title: これはテストタイトルです
+date: 2020-02-03 09:01:05
 ---
 `
     );
