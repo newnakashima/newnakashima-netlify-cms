@@ -8,11 +8,11 @@ const BlogIndexPage = (props) => {
   const count = data.allMarkdownRemark.edges.length
   const NextPage = (props) => {
     return (
-      <a className="pageNav next" href={`/page/${(props.context.currentPage+1)}`}>次のページ</a>
+      <a className="pageNav next" href={`/page/${(props.context.currentPage+1)}/`}>次のページ</a>
     )
   }
   const PreviousPage = (props) => {
-    const href = props.context.currentPage == 2 ? '/' : `/page/${(props.context.currentPage - 1)}`
+    const href = props.context.currentPage == 2 ? '/' : `/page/${(props.context.currentPage - 1)}/`
     return (
       <a className="pageNav" href={href}>前のページ</a>
     )
