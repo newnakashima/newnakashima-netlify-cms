@@ -14,7 +14,7 @@ const Footer = class extends React.Component {
         <div className="content has-text-centered">
           <p className="foot-title">newnakashimaのBlog</p>
         </div>
-        <div className="content has-text-centered has-background-black has-text-white-ter">
+        {/*<div className="content has-text-centered has-background-black has-text-white-ter">
           <div className="container has-background-black has-text-white-ter">
             <div className="columns">
               <div className="column social">
@@ -33,7 +33,6 @@ const Footer = class extends React.Component {
                     style={{ width: '1em', height: '1em' }}
                   />
                 </a>
-                */}
                 {/*<a title="instagram" href="https://instagram.com">
                   <img
                     src={instagram}
@@ -47,11 +46,11 @@ const Footer = class extends React.Component {
                     alt="Vimeo"
                     style={{ width: '1em', height: '1em' }}
                   />
-                </a>*/}
+                </a>
               </div>
             </div>
           </div>
-        </div>
+        </div>*/}
       </footer>
     )
   }
