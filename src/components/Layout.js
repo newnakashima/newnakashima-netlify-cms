@@ -40,8 +40,8 @@ const TemplateWrapper = ({ children }) => {
         />
         <meta name="theme-color" content="#88f" />
         <meta name="twitter:card" content="summary" />
-        <meta name="twitter:site" content="@InNksm" />
-        <meta name="twitter:creator" content="@InNksm" />
+        <meta name="twitter:site" content="@dictatorship76" />
+        <meta name="twitter:creator" content="@dictatorship76" />
         <meta property="og:type" content="website" />
         <meta property="og:title" content={title} />
         <meta property="og:url" content="/" />

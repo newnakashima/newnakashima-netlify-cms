@@ -1,61 +1,83 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import PropTypes from 'prop-types'
-import { Link, graphql, StaticQuery } from 'gatsby'
-import PreviewCompatibleImage from './PreviewCompatibleImage'
+import { Link } from 'gatsby'
+import hljs from 'highlight.js'
+import 'highlight.js/styles/vs2015.css'
+import '../templates/blog.sass'
 
-class BlogRoll extends React.Component {
-  render() {
-    const { data } = this.props
-    const { edges: posts } = data.allMarkdownRemark
+function BlogRoll (props) {
+  useEffect(() => {
+    document.querySelectorAll("pre code").forEach(block => {
+      if (/.*…$/.test(block.innerText)) {
+        block.parentElement.replaceWith('…');
+        return;
+      }
+      hljs.highlightBlock(block);
+      block.innerHTML = createLineNumbers(block);
+    })
+  })
 
-    return (
-      <div className="columns is-multiline">
-        {posts &&
-          posts.map(({ node: post }) => (
-            <div className="is-parent column is-6" key={post.id}>
-              <article
-                className={`blog-list-item tile is-child box ${
-                  post.frontmatter.featuredpost ? 'is-featured' : ''
-                }`}
-              >
-                <header>
-                  {post.frontmatter.featuredimage ? (
-                    <div className="featured-thumbnail">
-                      <PreviewCompatibleImage
-                        imageInfo={{
-                          image: post.frontmatter.featuredimage,
-                          alt: `featured image thumbnail for post ${post.frontmatter.title}`,
-                        }}
-                      />
-                    </div>
-                  ) : null}
-                  <p className="post-meta">
-                    <Link
-                      className="title has-text-primary is-size-4"
-                      to={post.fields.slug}
-                    >
-                      {post.frontmatter.title}
-                    </Link>
-                    <br />
-                    <span className="subtitle is-size-5 is-block">
-                      {post.frontmatter.date}
-                    </span>
-                  </p>
-                </header>
-                <p>
-                  {post.excerpt}
-                  <br />
-                  <br />
-                  <Link className="button" to={post.fields.slug}>
-                    Keep Reading →
-                  </Link>
-                </p>
-              </article>
-            </div>
-          ))}
-      </div>
-    )
+  const createLineNumbers = block => {
+    const lines = block.innerHTML.split("\n");
+    const digits = Math.floor(Math.log10(lines.length)) + 1;
+    return lines.map((line, i) => {
+      return `<span class="line-number">${line}</span>`;
+    }).slice(0, -1).join("\n");
   }
+
+  const { data } = props
+  const { edges: posts } = data.allMarkdownRemark
+
+  return (
+    <div className="columns is-multiline">
+      {posts &&
+        posts.map(({ node: post }) => (
+          <div className="is-parent column is-full" key={post.id}>
+            <article
+              className={`blog-list-item tile is-child box ${
+                post.frontmatter.featuredpost ? 'is-featured' : ''
+              }`}
+            >
+              <header>
+                {/* {post.frontmatter.featuredimage ? (
+                  <div className="featured-thumbnail">
+                    <PreviewCompatibleImage
+                      imageInfo={{
+                        image: post.frontmatter.featuredimage,
+                        alt: `featured image thumbnail for post ${post.frontmatter.title}`,
+                      }}
+                    />
+                  </div>
+                ) : null} */}
+                <p className="post-meta">
+                  <Link
+                    className="title has-text-primary is-size-4"
+                    to={post.fields.slug}
+                  >
+                    {post.frontmatter.title}
+                  </Link>
+                  <br />
+                  <span className="subtitle is-size-5 is-block">
+                    {post.frontmatter.date}
+                  </span>
+                </p>
+              </header>
+              <div>
+                <div
+                  dangerouslySetInnerHTML={{__html: post.excerpt}}
+                />
+                {/* {post.excerpt} */}
+                <br />
+                <br />
+                <Link className="button" to={post.fields.slug}>
+                  {`続き =>`}
+                </Link>
+              </div>
+            </article>
+          </div>
+        ))}
+    </div>
+  )
 }
 
 BlogRoll.propTypes = {

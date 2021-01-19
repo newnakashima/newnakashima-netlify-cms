@@ -70,7 +70,7 @@ export const query = graphql`
     ) {
       edges {
         node {
-          excerpt(pruneLength: 120, truncate: true)
+          excerpt(pruneLength: 255, truncate: false, format: HTML)
           id
           fields {
             slug
@@ -82,7 +82,7 @@ export const query = graphql`
             featuredpost
             featuredimage {
               childImageSharp {
-                fluid(maxWidth: 120, quality: 100) {
+                fluid(maxWidth: 400, quality: 100) {
                   ...GatsbyImageSharpFluid
                 }
               }
