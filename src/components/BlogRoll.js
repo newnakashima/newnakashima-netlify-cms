@@ -34,7 +34,7 @@ function BlogRoll (props) {
         posts.map(({ node: post }) => (
           <div className="is-parent column is-full" key={post.id}>
             <article
-              className={`blog-list-item tile is-child box ${
+              className={`blog-list-item is-child ${
                 post.frontmatter.featuredpost ? 'is-featured' : ''
               }`}
             >
@@ -67,8 +67,6 @@ function BlogRoll (props) {
                   dangerouslySetInnerHTML={{__html: post.excerpt}}
                 />
                 {/* {post.excerpt} */}
-                <br />
-                <br />
                 <Link className="button" to={post.fields.slug}>
                   {`続き =>`}
                 </Link>
