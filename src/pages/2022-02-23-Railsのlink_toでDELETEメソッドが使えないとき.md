@@ -22,7 +22,7 @@ Turboを使っているからなのか、どうも `:method => :delete` をつ�
 
 https://github.com/heartcombo/devise/issues/4486#issuecomment-444534885
 
-つまり、link_toではなくてbutton_toを使えばいいっぽい。
+つまり、`link_to` ではなくて `button_to` を使えばいいっぽい。
 
 ```
 = button_to 'ログアウト', destroy_user_session_path, :method => :delete
