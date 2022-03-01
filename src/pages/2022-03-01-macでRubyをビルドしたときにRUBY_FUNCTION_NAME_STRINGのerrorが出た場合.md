@@ -15,7 +15,7 @@ sudo xcode-select --install
 
 ---
 
-久しぶりにrbenvを使って違うバージョンのRuby使ってみよっかなって思ったときに `RUBY_FUNCTION_NAME_STRING` が未定義だとかいうエラーが出て積んだ。Homebrewから入れると大丈夫だけど、これはコンパイル済みのものを落としてきているだけなので問題は解決していない。
+久しぶりにrbenvを使って違うバージョンのRuby使ってみよっかなって思ったときに `RUBY_FUNCTION_NAME_STRING` が未定義だとかいうエラーが出てハマった。Homebrewから入れると大丈夫だけど、これはコンパイル済みのものを落としてきているだけなので問題は解決していない。
 
 https://github.com/rbenv/ruby-build/issues/1431
 
