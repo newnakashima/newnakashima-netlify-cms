@@ -39,6 +39,12 @@ export const BlogPostTemplate = ({
       <div className="container content">
         <div className="columns">
           <div className="column is-10 is-offset-1">
+            <a
+              href='javascript:void(0)'
+              onClick={() => window.history.back()}
+            >
+              戻る
+            </a>
             <h1 className="title is-size-2 has-text-weight-bold is-bold-light">
               {title}
             </h1>

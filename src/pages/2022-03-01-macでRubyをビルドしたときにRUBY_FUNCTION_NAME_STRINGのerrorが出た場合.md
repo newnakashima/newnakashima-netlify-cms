@@ -7,7 +7,7 @@ tags:
   - mac
 ---
 
-```
+```sh
 sudo rm -rf /Library/Developer/CommandLineTools
 sudo xcode-select --install
 ```
@@ -24,7 +24,7 @@ https://github.com/rbenv/ruby-build/issues/1431
 https://github.com/rbenv/ruby-build/issues/1409#issuecomment-752223239
 > Updating of the command tools helped me:
 >
-> ```
+> ```sh
 > sudo rm -rf /Library/Developer/CommandLineTools
 > sudo xcode-select --install
 > ```
